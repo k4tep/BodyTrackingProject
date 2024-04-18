@@ -1,0 +1,79 @@
+$dark-green-color: #627254;
+$main-green-color: #76885B;
+$dark-light-color: #DDDDDD;
+$main-light-color: #EEEEEE;
+
+.auth_text {
+  color: $main-green-color;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+.auth_text::before {
+  content: 'Body Tracking';
+  display: block;
+  font-size: 70px;
+  font-weight: 100;
+  margin-bottom: 30px;
+  color: $dark-green-color;
+}
+
+.auth_text::after {
+  content: 'And see the changes in your body';
+  display: block;
+  font-family: monospace;
+  font-size: small;
+}
+
+.auth_img{
+  width: 60vw;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.auth_container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth_input_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth_btn {
+  background-color: $dark-green-color;
+  color: $main-light-color;
+  border: none;
+  border-radius: 3px;
+  margin: 5px;
+  font-size: 30px;
+  width: 40%;
+  padding: 5px 0;
+}
+
+.auth_btn:hover {
+  background-color: $main-light-color;
+  color: $dark-green-color;
+  cursor: pointer;
+}
+
+.auth_change_btn {
+  border: none;
+  color: $dark-green-color;
+  background-color: white;
+  margin-bottom: 5px;
+}
+
+.auth_change_btn:hover {
+  color: $dark-light-color;
+  cursor: pointer;
+}
