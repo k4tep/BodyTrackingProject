@@ -15,7 +15,7 @@ $main-light-color: #EEEEEE;
   display: block;
   font-size: 70px;
   font-weight: 100;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: $dark-green-color;
 }
 
@@ -41,6 +41,7 @@ $main-light-color: #EEEEEE;
   height: 100vh;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .auth_input_container {
@@ -56,13 +57,10 @@ $main-light-color: #EEEEEE;
   border-radius: 3px;
   margin: 5px;
   font-size: 30px;
-  width: 40%;
-  padding: 5px 0;
+  padding: 5px 30px;
 }
 
 .auth_btn:hover {
-  background-color: $main-light-color;
-  color: $dark-green-color;
   cursor: pointer;
 }
 
@@ -74,6 +72,11 @@ $main-light-color: #EEEEEE;
 }
 
 .auth_change_btn:hover {
-  color: $dark-light-color;
   cursor: pointer;
 }
+
+// .logo_img {
+//   height: 20%;
+//   position: relative;
+//   top: 4%;
+// }

@@ -1,0 +1,40 @@
+$dark-green-color: #627254;
+$main-green-color: #76885B;
+$dark-light-color: #DDDDDD;
+$main-light-color: #EEEEEE;
+
+.error_message {
+  margin: 0 10px;
+}
+
+.main {
+  height: 70vh;
+  // background-image: linear-gradient($main-green-color, white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $dark-green-color;
+}
+
+.main_container {
+  font-family: monospace;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.date_container {
+  margin-bottom: 20px;
+  width: 21%;
+  display: flex;
+  flex-direction: column;
+}
+
+.data_container {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

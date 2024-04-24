@@ -1,3 +1,21 @@
+$dark-green-color: #627254;
+$main-green-color: #76885B;
+$dark-light-color: #DDDDDD;
+$main-light-color: #EEEEEE;
+
 *, body {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-green-color;
+}
+
+.MuiPickersDay-root:not(.Mui-selected) {
+  border-color: $main-green-color;
+}
+
+.MuiPickersDay-root.Mui-selected, .MuiPickersYear-yearButton.Mui-selected {
+  background-color: $main-green-color !important;
 }

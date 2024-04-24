@@ -1,0 +1,24 @@
+$dark-green-color: #627254;
+$main-green-color: #76885B;
+$dark-light-color: #DDDDDD;
+$main-light-color: #EEEEEE;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $main-light-color;
+  height: 5vh;
+  width: 75.8%;
+  position: fixed;
+  border-radius: 5px;
+  padding: 5px 30px;
+  left: 10%;
+  margin-top: 5px;
+  color: $dark-green-color;
+}
+
+.header_text {
+  font-weight: 100;
+  color: $dark-green-color;
+}
