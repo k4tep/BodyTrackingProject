@@ -1,8 +1,12 @@
-export async function signUp(email:string, password:string) {
+export async function signIn(email:string, password:string, authType:string) {
   const headers = new Headers();
+  headers.append('Content-Type', 'application/json');
   headers.append('Accept', 'application/json');
+  headers.append('Allow-Origin', '*');
 
-  const response = await fetch(`/auth/signup`, {
+  console.log(email, password)
+
+  const response = await fetch(`http://192.168.31.68:3000/auth/`+ authType.toLocaleLowerCase().replace(/ /g,''), {
     method: 'POST',
     headers,
     body: JSON.stringify({

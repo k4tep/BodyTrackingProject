@@ -9,7 +9,7 @@ export default function MyHeader() {
     return (
         <header className={styles.header}>
             <h1 className={styles.header_name_text}>Body Tracking</h1>
-            <Link href="/auth">
+            <Link href="/auth" onClick={() => localStorage.removeItem('token')}>
                 <FontAwesomeIcon icon={['fas', 'arrow-right-from-bracket']} size="2xl" />
             </Link>
         </header>

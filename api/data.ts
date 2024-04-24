@@ -4,7 +4,7 @@ export async function getData() {
   headers.append('Content-Type', 'application/json');
   headers.append('Accept', 'application/json');
   headers.append('Allow-Origin', '*');
-  headers.append('Authorization', `Bearer ${token}`);
+  headers.append('Authorization', `Bearer ${localStorage.getItem('token')}`);
 
   const response = await fetch(`http://192.168.31.68:3000/weights?dateFrameStart=2023-04-01&dateFrameEnd=2024-04-30`, {
     method: 'GET',
