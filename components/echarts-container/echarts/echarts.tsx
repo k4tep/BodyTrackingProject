@@ -23,7 +23,7 @@ export default function MyEcharts(props: { data: any }) {
 
     return (
         <div className={styles.echarts_container}>
-            <ReactEcharts option={option} />
+            {props.data.length === 0 ? <h1>No data here</h1> : <ReactEcharts option={option} />}
         </div>
     );
 }

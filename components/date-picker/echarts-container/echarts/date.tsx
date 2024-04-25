@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 export default function MyDatePicker(props: { label: string }) {
     return (
         <DatePicker
-            defaultValue={
+            value={
                 props.label === 'End date'
                     ? dayjs(Date.now())
                     : dayjs(Date.now() - 7 * 24 * 60 * 60 * 1000)
