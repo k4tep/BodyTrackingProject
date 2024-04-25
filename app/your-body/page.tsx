@@ -12,6 +12,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import MyDatePicker from '@/components/date-picker/echarts-container/echarts/date';
 import { redirect } from 'next/navigation';
+import dayjs from 'dayjs';
 
 export default function Main() {
     library.add(fas);
@@ -23,6 +24,10 @@ export default function Main() {
             value: 0,
         },
     ]);
+    const [date, setDate] = useState({
+        startDate: dayjs(Date.now() - 7 * 24 * 60 * 60 * 1000),
+        endDate: dayjs(Date.now()),
+    });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
@@ -30,7 +35,7 @@ export default function Main() {
         async function getList() {
             setLoading(true);
             try {
-                const data = await getData();
+                const data = await getData(date);
                 setData(data);
             } catch (error) {
                 setError(`${error}`);
@@ -38,7 +43,7 @@ export default function Main() {
             setLoading(false);
         }
         getList();
-    }, []);
+    }, [date]);
 
     if (!localStorage.getItem('token')) {
         redirect('/auth');
@@ -60,8 +65,8 @@ export default function Main() {
                     <div className={styles.main_container}>
                         <div className={styles.data_container}>
                             <div className={styles.date_container}>
-                                <MyDatePicker label="Start date" />
-                                <MyDatePicker label="End date" />
+                                <MyDatePicker label="Start date" date={date} setDate={setDate} />
+                                <MyDatePicker label="End date" date={date} setDate={setDate} />
                                 <MyGrid data={data} />
                             </div>
                             <MyEcharts data={data} />

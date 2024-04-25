@@ -1,12 +1,13 @@
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpY2MiOjIsImlhdCI6MTcxMzUxOTYwMCwiZXhwIjoxNzE2MTExNjAwfQ.8MF2zZOQkzMa22J4-PF8b1_OY8lqIOMxa7HHl9VPlO0'
-export async function getData() {
+import dayjs from "dayjs";
+
+export async function getData(date:{ startDate: dayjs.Dayjs; endDate: dayjs.Dayjs; }) {
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
   headers.append('Accept', 'application/json');
   headers.append('Allow-Origin', '*');
   headers.append('Authorization', `Bearer ${localStorage.getItem('token')}`);
 
-  const response = await fetch(`http://192.168.31.68:3000/weights?dateFrameStart=2023-04-01&dateFrameEnd=2024-04-30`, {
+  const response = await fetch(`http://192.168.31.68:3000/weights?dateFrameStart=${date.startDate.format('YYYY-MM-DD')}&dateFrameEnd=${date.endDate.format('YYYY-MM-DD')}`, {
     method: 'GET',
     headers,
   });

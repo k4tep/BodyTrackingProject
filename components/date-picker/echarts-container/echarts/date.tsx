@@ -1,15 +1,20 @@
 import { DatePicker } from '@mui/x-date-pickers';
 import dayjs from 'dayjs';
 
-export default function MyDatePicker(props: { label: string }) {
+export default function MyDatePicker(props: {
+    label: string;
+    date: { startDate: dayjs.Dayjs; endDate: dayjs.Dayjs };
+    setDate: any;
+}) {
     return (
         <DatePicker
-            value={
-                props.label === 'End date'
-                    ? dayjs(Date.now())
-                    : dayjs(Date.now() - 7 * 24 * 60 * 60 * 1000)
-            }
+            defaultValue={props.label === 'End date' ? props.date.endDate : props.date.startDate}
             label={props.label}
+            onChange={(newValue) =>
+                props.label === 'End date'
+                    ? props.setDate({ ...props.date, endDate: newValue })
+                    : props.setDate({ ...props.date, startDate: newValue })
+            }
             sx={{
                 '.MuiInputBase-root': {
                     color: '#627254',
