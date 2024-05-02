@@ -12,7 +12,6 @@ $main-light-color: #EEEEEE;
   // background-image: linear-gradient($main-green-color, white);
   display: flex;
   justify-content: center;
-  align-items: center;
   color: $dark-green-color;
 }
 
@@ -20,9 +19,7 @@ $main-light-color: #EEEEEE;
   font-family: monospace;
   width: 80%;
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
 }
 
 .date_container {

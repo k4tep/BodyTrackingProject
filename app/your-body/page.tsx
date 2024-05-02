@@ -54,9 +54,9 @@ export default function Main() {
 
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <MyHeader />
             <MyPopUp setPopUp={setPopUp} popUp={popUp} />
             <main className={styles.main}>
+                <MyHeader />
                 {loading ? (
                     <FontAwesomeIcon icon={['fas', 'spinner']} spinPulse size="2xl" />
                 ) : error != '' ? (
