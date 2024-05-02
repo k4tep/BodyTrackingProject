@@ -1,0 +1,43 @@
+$dark-green-color: #627254;
+$main-green-color: #76885B;
+$dark-light-color: #DDDDDD;
+$main-light-color: #EEEEEE;
+
+.popup_container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(82, 82, 82, 0.678);
+  color: $dark-green-color;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup_container_none {
+  display: none
+}
+
+.popup_input_container {
+  background-color: $dark-light-color;
+  display: flex;
+  flex-direction: column;
+  height: 25vh;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.auth_btn {
+  background-color: $dark-green-color;
+  color: $main-light-color;
+  border: none;
+  border-radius: 3px;
+  margin: 5px;
+  font-size: 30px;
+  padding: 5px 30px;
+}
+
+.input_input__N_xjH {
+  margin: 0 !important; 
+}

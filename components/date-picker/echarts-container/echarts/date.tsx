@@ -3,15 +3,23 @@ import dayjs from 'dayjs';
 
 export default function MyDatePicker(props: {
     label: string;
-    date: { startDate: dayjs.Dayjs; endDate: dayjs.Dayjs };
+    date: { startDate: dayjs.Dayjs; endDate: dayjs.Dayjs } | { date: dayjs.Dayjs; value: number };
     setDate: any;
 }) {
     return (
         <DatePicker
-            defaultValue={props.label === 'End date' ? props.date.endDate : props.date.startDate}
+            defaultValue={
+                props.label === 'Date'
+                    ? props.date?.date
+                    : props.label === 'End date'
+                    ? props.date?.endDate
+                    : props.date?.startDate
+            }
             label={props.label}
             onChange={(newValue) =>
-                props.label === 'End date'
+                props.label === 'Date'
+                    ? props.setDate({ ...props.date, date: newValue })
+                    : props.label === 'End date'
                     ? props.setDate({ ...props.date, endDate: newValue })
                     : props.setDate({ ...props.date, startDate: newValue })
             }

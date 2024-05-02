@@ -1,7 +1,7 @@
 'use client';
 import MyInput from '@/components/input/input';
 import styles from './page.module.scss';
-import { SetStateAction, useEffect, useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import { signIn } from '@/api/auth';
 import { redirect } from 'next/navigation';
 
@@ -38,14 +38,14 @@ export default function Auth() {
                         onBlur={(event: { target: { value: SetStateAction<string> } }) => {
                             setEmailValue(event.target.value);
                         }}
-                    ></MyInput>
+                    />
                     <MyInput
                         placeholder="Password"
                         type="password"
                         onBlur={(event: { target: { value: SetStateAction<string> } }) => {
                             setPasswordValue(event.target.value);
                         }}
-                    ></MyInput>
+                    />
                     <button
                         className={styles.auth_change_btn}
                         onClick={() => setAuthType(authType === 'Sign Up' ? 'Sign In' : 'Sign Up')}

@@ -6,19 +6,23 @@ $main-light-color: #EEEEEE;
 .grid_container {
   display: grid;
   align-items: center;
-  grid-template-rows: min-content;
   border-radius: 5px;
-  padding: 10px;
-  margin-top: 5px;
+  margin: 5px 0;
+  height: fit-content;
   background-color: $main-light-color;
-  // overflow-y: scroll;
+}
+
+.grid_container_overflow {
+  height: 25vh;
+  overflow-y: scroll;
 }
 
 .grid_item {
   color: $dark-green-color;
   background-color: $main-light-color;
   border: none;
-  width: 50%;
+  width: 40%;
+  text-align: center;
   outline-color: $main-green-color;
   height: 30px;
 }
@@ -30,12 +34,14 @@ $main-light-color: #EEEEEE;
 .grid_row {
   display: flex;
   border-bottom: 2px solid $dark-light-color;
-  height: 100%;
   align-items: center;
+  padding: 10px;
+  justify-content: space-around;
 }
 
-.grid_row:first-child .grid_item{
+.grid_row:first-child, .grid_row:first-child .grid_item{
   background-color: $dark-light-color;
+  border-radius: 5px 5px 0 0
 }
 
 .grid_row:last-child {
