@@ -11,6 +11,23 @@ export default function MyPopUp(props: { setPopUp: any; popUp: boolean }) {
         value: 0,
     });
 
+    async function postNewData() {
+        try {
+            await postData({
+                ...newData,
+                date: newData.date.format('YYYY-MM-DD'),
+            });
+
+            setNewData({
+                date: dayjs(Date.now()),
+                value: 0,
+            });
+            props.setPopUp(false);
+        } catch (error) {
+            console.log(`${error}`);
+        }
+    }
+
     return (
         <div
             className={props.popUp ? styles.popup_container : styles.popup_container_none}
@@ -39,11 +56,7 @@ export default function MyPopUp(props: { setPopUp: any; popUp: boolean }) {
                 <button
                     className={styles.auth_btn}
                     onClick={() => {
-                        postData({
-                            ...newData,
-                            date: newData.date.format('YYYY-MM-DD'),
-                        });
-                        props.setPopUp(false);
+                        postNewData();
                     }}
                 >
                     Save

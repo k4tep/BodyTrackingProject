@@ -18,7 +18,8 @@ export default function MyGrid(props: {
     useEffect(() => {
         async function putUpdateData() {
             try {
-                const data = await putData(editData);
+                await putData(editData);
+                props.setDeleteID(0);
             } catch (error) {
                 console.log(`${error}`);
             }
