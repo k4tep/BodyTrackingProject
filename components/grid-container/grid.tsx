@@ -3,6 +3,8 @@ import styles from './grid.module.scss';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { deleteData } from '@/api/data/delete-data';
+import { useEffect, useState } from 'react';
+import { putData } from '@/api/data/put-data';
 
 export default function MyGrid(props: {
     data: any;
@@ -11,6 +13,20 @@ export default function MyGrid(props: {
     setPopUp: any;
 }) {
     library.add(fas);
+    const [editData, setEditData] = useState({ id: 0, value: 0 });
+
+    useEffect(() => {
+        async function putUpdateData() {
+            try {
+                const data = await putData(editData);
+            } catch (error) {
+                console.log(`${error}`);
+            }
+        }
+        if (editData.value != 0) {
+            putUpdateData();
+        }
+    }, [editData]);
 
     return (
         <>
@@ -34,24 +50,36 @@ export default function MyGrid(props: {
                 {props.data.length === 0 ? (
                     <h1>No data here</h1>
                 ) : (
-                    props.data.map((e: any) => (
-                        <div className={styles.grid_row} key={e.id + e.value}>
-                            <input
-                                className={styles.grid_item}
-                                defaultValue={`${e.date.slice(0, 10)}`}
-                            ></input>
-                            <input className={styles.grid_item} defaultValue={e.value}></input>
-                            <FontAwesomeIcon
-                                icon={['fas', 'trash-can']}
-                                size="xl"
-                                style={{ cursor: 'pointer' }}
-                                onClick={() => {
-                                    props.setDeleteID(e.id);
-                                    deleteData(e.id);
-                                }}
-                            />
-                        </div>
-                    ))
+                    props.data
+                        .sort((a: any, b: any) => Date.parse(b.date) - Date.parse(a.date))
+                        .map((e: any) => (
+                            <div className={styles.grid_row} key={e.id + e.value}>
+                                <input
+                                    disabled
+                                    className={styles.grid_item}
+                                    defaultValue={`${e.date.slice(0, 10)}`}
+                                ></input>
+                                <input
+                                    className={styles.grid_item}
+                                    defaultValue={e.value}
+                                    onBlur={(event) => {
+                                        setEditData({
+                                            id: e.id,
+                                            value: Number(event.target.value),
+                                        });
+                                    }}
+                                ></input>
+                                <FontAwesomeIcon
+                                    icon={['fas', 'trash-can']}
+                                    size="xl"
+                                    style={{ cursor: 'pointer' }}
+                                    onClick={() => {
+                                        props.setDeleteID(e.id);
+                                        deleteData(e.id);
+                                    }}
+                                />
+                            </div>
+                        ))
                 )}
             </div>
         </>
