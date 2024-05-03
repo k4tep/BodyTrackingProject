@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import MyDatePicker from '../date-picker/echarts-container/echarts/date';
+import MyDatePicker from '../date-picker/date';
 import MyInput from '../input/input';
 import styles from './popup.module.scss';
 import dayjs from 'dayjs';
