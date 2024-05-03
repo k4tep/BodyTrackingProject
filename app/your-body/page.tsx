@@ -11,11 +11,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import MyDatePicker from '@/components/date-picker/date';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import dayjs from 'dayjs';
 import MyPopUp from '@/components/popup/popup';
 
 export default function Main() {
+    const router = useRouter();
     library.add(fas);
     const [data, setData] = useState([
         {
@@ -36,7 +37,7 @@ export default function Main() {
 
     useEffect(() => {
         if (!localStorage.getItem('token')) {
-            redirect('/auth');
+            router.push('/auth');
         }
         async function getList() {
             setDeleteID(null);

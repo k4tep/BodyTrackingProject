@@ -4,8 +4,6 @@ export async function signIn(email:string, password:string, authType:string) {
   headers.append('Accept', 'application/json');
   headers.append('Allow-Origin', '*');
 
-  console.log(email, password)
-
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_PATH}/auth/`+ authType.toLocaleLowerCase().replace(/ /g,''), {
     method: 'POST',
     headers,
