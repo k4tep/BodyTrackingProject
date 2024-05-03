@@ -6,7 +6,7 @@ export async function signIn(email:string, password:string, authType:string) {
 
   console.log(email, password)
 
-  const response = await fetch(`http://192.168.31.68:3000/auth/`+ authType.toLocaleLowerCase().replace(/ /g,''), {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_PATH}/auth/`+ authType.toLocaleLowerCase().replace(/ /g,''), {
     method: 'POST',
     headers,
     body: JSON.stringify({

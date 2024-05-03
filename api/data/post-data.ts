@@ -5,7 +5,7 @@ export async function postData(data:{date: string; value: number} | {}) {
   headers.append('Allow-Origin', '*');
   headers.append('Authorization', `Bearer ${localStorage.getItem('token')}`);
 
-  const response = await fetch(`http://192.168.31.68:3000/weights`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_PATH}/weights`, {
     method: 'POST',
     headers,
     body: JSON.stringify(data)

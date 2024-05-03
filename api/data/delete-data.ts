@@ -5,7 +5,7 @@ export async function deleteData(id: number) {
   headers.append('Allow-Origin', '*');
   headers.append('Authorization', `Bearer ${localStorage.getItem('token')}`);
 
-  const response = await fetch(`http://192.168.31.68:3000/weights/${id}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_PATH}/weights/${id}`, {
     method: 'DELETE',
     headers,
   });

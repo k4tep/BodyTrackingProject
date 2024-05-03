@@ -7,7 +7,7 @@ export async function getData(date:{ startDate: dayjs.Dayjs; endDate: dayjs.Dayj
   headers.append('Allow-Origin', '*');
   headers.append('Authorization', `Bearer ${localStorage.getItem('token')}`);
 
-  const response = await fetch(`http://192.168.31.68:3000/weights?dateFrameStart=${date.startDate.format('YYYY-MM-DD')}&dateFrameEnd=${date.endDate.format('YYYY-MM-DD')}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_PATH}/weights?dateFrameStart=${date.startDate.format('YYYY-MM-DD')}&dateFrameEnd=${date.endDate.format('YYYY-MM-DD')}`, {
     method: 'GET',
     headers,
   });
