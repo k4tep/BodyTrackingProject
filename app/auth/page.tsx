@@ -1,24 +1,28 @@
 'use client';
 import MyInput from '@/components/input/input';
 import styles from './page.module.scss';
-import { SetStateAction, useState } from 'react';
+import { SetStateAction, useEffect, useState } from 'react';
 import { signIn } from '@/api/auth';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function Auth() {
+    const router = useRouter();
     const [authType, setAuthType] = useState('Sign In');
     const [error, setError] = useState('');
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
 
-    async function getToken() {
+    useEffect(() => {
         if (localStorage.getItem('token')) {
-            redirect('/your-body');
+            router.push('/your-body');
         }
+    }, []);
+
+    async function getToken() {
         try {
             const data = await signIn(emailValue, passwordValue, authType);
             localStorage.setItem('token', data.token);
-            redirect('/your-body');
+            router.push('/your-body');
         } catch (error) {
             setError(`${error}`);
         }
