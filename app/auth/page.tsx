@@ -11,11 +11,10 @@ export default function Auth() {
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
 
-    if (localStorage.getItem('token')) {
-        redirect('/your-body');
-    }
-
     async function getToken() {
+        if (localStorage.getItem('token')) {
+            redirect('/your-body');
+        }
         try {
             const data = await signIn(emailValue, passwordValue, authType);
             localStorage.setItem('token', data.token);

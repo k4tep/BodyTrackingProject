@@ -1,11 +1,7 @@
 import { DatePicker } from '@mui/x-date-pickers';
 import dayjs from 'dayjs';
 
-export default function MyDatePicker(props: {
-    label: string;
-    date: { startDate: dayjs.Dayjs; endDate: dayjs.Dayjs } | { date: dayjs.Dayjs; value: number };
-    setDate: any;
-}) {
+export default function MyDatePicker(props: { label: string; date: any; setDate: any }) {
     return (
         <DatePicker
             defaultValue={
