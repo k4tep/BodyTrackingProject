@@ -43,7 +43,7 @@ export default function MyGrid(props: {
                     <input className={styles.grid_item} disabled defaultValue={'Weight/kg'}></input>
                     <FontAwesomeIcon
                         icon={['fas', 'circle-plus']}
-                        size="xl"
+                        size="2xl"
                         style={{ cursor: 'pointer' }}
                         onClick={() => props.setPopUp(true)}
                     />
@@ -72,7 +72,7 @@ export default function MyGrid(props: {
                                 ></input>
                                 <FontAwesomeIcon
                                     icon={['fas', 'trash-can']}
-                                    size="xl"
+                                    size="2xl"
                                     style={{ cursor: 'pointer' }}
                                     onClick={() => {
                                         props.setDeleteID(e.id);
