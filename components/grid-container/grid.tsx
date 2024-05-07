@@ -33,7 +33,7 @@ export default function MyGrid(props: {
         <>
             <div
                 className={
-                    props.data.length <= 5
+                    props.data.length <= 10
                         ? styles.grid_container
                         : `${styles.grid_container} ${styles.grid_container_overflow}`
                 }
