@@ -79,7 +79,7 @@ export default function Main() {
                                     setPopUp={setPopUp}
                                 />
                             </div>
-                            <MyEcharts data={data} />
+                            <MyEcharts data={data} date={date} />
                         </div>
                     </div>
                 )}
