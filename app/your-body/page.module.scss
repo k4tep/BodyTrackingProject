@@ -8,10 +8,9 @@ $main-light-color: #EEEEEE;
 }
 
 .main {
-  height: 70vh;
-  // background-image: linear-gradient($main-green-color, white);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   color: $dark-green-color;
 }
 
@@ -19,18 +18,18 @@ $main-light-color: #EEEEEE;
   font-family: monospace;
   width: 80%;
   display: flex;
+  margin: 10px 0;
   align-items: center;
 }
 
 .date_container {
   margin-bottom: 20px;
-  width: 21%;
+  width: 25%;
   display: flex;
   flex-direction: column;
 }
 
 .data_container {
-  margin-bottom: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;

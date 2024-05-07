@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 export default function MyDatePicker(props: { label: string; date: any; setDate: any }) {
     return (
         <DatePicker
+            format={'DD/MM/YYYY'}
             defaultValue={
                 props.label === 'Date'
                     ? props.date?.date

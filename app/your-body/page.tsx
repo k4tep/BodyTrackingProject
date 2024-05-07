@@ -27,7 +27,7 @@ export default function Main() {
         },
     ]);
     const [date, setDate] = useState({
-        startDate: dayjs(Date.now() - 7 * 24 * 60 * 60 * 1000),
+        startDate: dayjs(Date.now() - 30 * 24 * 60 * 60 * 1000),
         endDate: dayjs(Date.now()),
     });
     const [deleteID, setDeleteID] = useState(null);
