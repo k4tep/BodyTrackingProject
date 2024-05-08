@@ -3,8 +3,12 @@ $main-green-color: #76885B;
 $dark-light-color: #DDDDDD;
 $main-light-color: #EEEEEE;
 
-*, body {
+* {
   margin: 0;
+}
+
+body {
+  overflow: hidden;
 }
 
 a {

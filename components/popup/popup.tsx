@@ -42,7 +42,7 @@ export default function MyPopUp(props: { setPopUp: any; popUp: boolean }) {
                 }}
             >
                 <h1>Enter your data</h1>
-                <MyDatePicker label="Date" date={newData} setDate={setNewData} />
+                <MyDatePicker label="" date={newData} setDate={setNewData} />
                 <MyInput
                     placeholder="Weight"
                     type="number"

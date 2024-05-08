@@ -6,7 +6,7 @@ export default function MyDatePicker(props: { label: string; date: any; setDate:
         <DatePicker
             format={'DD/MM/YYYY'}
             defaultValue={
-                props.label === 'Date'
+                props.label === ''
                     ? props.date?.date
                     : props.label === 'End date'
                     ? props.date?.endDate
@@ -14,7 +14,7 @@ export default function MyDatePicker(props: { label: string; date: any; setDate:
             }
             label={props.label}
             onChange={(newValue) =>
-                props.label === 'Date'
+                props.label === ''
                     ? props.setDate({ ...props.date, date: newValue })
                     : props.label === 'End date'
                     ? props.setDate({ ...props.date, endDate: newValue })
