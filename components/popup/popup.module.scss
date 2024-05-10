@@ -13,6 +13,7 @@ $main-light-color: #EEEEEE;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .popup_container_none {
@@ -27,14 +28,23 @@ $main-light-color: #EEEEEE;
   border-radius: 5px;
 }
 
-.auth_btn {
+.save_btn {
   background-color: $dark-green-color;
   color: $main-light-color;
   border: none;
   border-radius: 3px;
-  margin: 5px;
   font-size: 30px;
   padding: 5px 30px;
+  cursor: pointer;
+}
+
+.close_btn {
+  border-radius: 20px;
+  position: relative;
+  top: 20px;
+  left: 170px;
+  background-color: $main-light-color;
+  cursor: pointer;
 }
 
 .input_input__N_xjH {
