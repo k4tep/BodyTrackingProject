@@ -79,7 +79,11 @@ export default function Main() {
                                     setPopUp={setPopUp}
                                 />
                             </div>
-                            <MyEcharts data={data} date={date} />
+                            <div className={styles.data_container}>
+                                <MyEcharts data={data} date={date} type="Line" />
+                                <h1 className={styles.echart_name}>Body mass index</h1>
+                                <MyEcharts data={data} date={date} type="Grade" />
+                            </div>
                         </div>
                     </div>
                 )}
