@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 
 export default function MyEchartGrade(props: { data: any }) {
     const [me, setMe] = useState({ id: null, email: '', age: null, height: null });
-    let windowWidth = window.innerWidth;
+    const [windowWidth, setWindowWidth] = useState(1000);
 
     useEffect(() => {
+        setWindowWidth(window.innerWidth);
         async function getInfo() {
             try {
                 const data = await getMe();
