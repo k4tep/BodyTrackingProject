@@ -28,7 +28,7 @@ $main-light-color: #EEEEEE;
 }
 
 .date_container {
-  width: 25%;
+  width: 30%;
   display: flex;
   flex-direction: column;
 }
@@ -43,8 +43,55 @@ $main-light-color: #EEEEEE;
     align-items: flex-end;
     justify-content: flex-start;
     :last-child {
-      height: 40vh;
+      height: 40%;
     }
   }
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    height: 100%;
+  }
+
+  .main_container {
+    width: 93%;
+    height: 100%;
+    align-items: flex-start;
+  }
+
+  .data_container {
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    .data_container {
+      align-items: center;
+      :last-child {
+        height: 45%;
+      }
+    }
+  }
+
+  .date_container {
+    width: 95%; 
+    margin-bottom: 1vh;
+  }
+
+  .echart_name {
+    margin: 1vh 0 0 4vw;
+  }
   
+}
+
+@media only screen and (max-width: 768px) { 
+  .grid_container_overflow {
+    height: 30vh;
+  }
+
+  .data_container {
+    .data_container {
+      :last-child {
+        height: 40%;
+      }
+    }
+  }
 }

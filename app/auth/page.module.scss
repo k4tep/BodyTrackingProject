@@ -80,3 +80,13 @@ $main-light-color: #EEEEEE;
 //   position: relative;
 //   top: 4%;
 // }
+
+@media only screen and (max-width: 1024px) {
+  .auth_img{
+    display: none;
+  }
+
+  .container {
+    justify-content: center;
+  }
+}
