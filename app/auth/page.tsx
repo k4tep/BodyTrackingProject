@@ -13,8 +13,12 @@ export default function Auth() {
     const [passwordValue, setPasswordValue] = useState('');
 
     useEffect(() => {
+        const body = document.querySelector('body');
         if (localStorage.getItem('token')) {
             router.push('/your-body');
+        }
+        if (body) {
+            body.style.overflow = 'hidden';
         }
     }, []);
 

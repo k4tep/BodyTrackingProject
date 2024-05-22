@@ -36,8 +36,14 @@ export default function Main() {
     const [error, setError] = useState('');
 
     useEffect(() => {
+        const body = document.querySelector('body');
         if (!localStorage.getItem('token')) {
             router.push('/auth');
+        }
+        if (popUp && body) {
+            body.style.overflow = 'hidden';
+        } else if (!popUp && body) {
+            body.style.overflow = 'scroll';
         }
         async function getList() {
             setDeleteID(null);

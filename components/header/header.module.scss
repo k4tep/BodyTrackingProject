@@ -20,3 +20,9 @@ $main-light-color: #EEEEEE;
   font-weight: 100;
   color: $dark-green-color;
 }
+
+@media screen and (max-width: 1024px) {
+  .header{
+    width: 85%;
+  }
+}

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function MyEchartGrade(props: { data: any }) {
     const [me, setMe] = useState({ id: null, email: '', age: null, height: null });
+    let windowWidth = window.innerWidth;
 
     useEffect(() => {
         async function getInfo() {
@@ -21,7 +22,7 @@ export default function MyEchartGrade(props: { data: any }) {
                 type: 'gauge',
                 startAngle: 180,
                 endAngle: 0,
-                center: ['50%', '90%'],
+                center: ['53%', '90%'],
                 radius: '150%',
                 min: 10,
                 max: 64,
@@ -40,31 +41,31 @@ export default function MyEchartGrade(props: { data: any }) {
                 pointer: {
                     icon: 'path://M12.8,0.7l12,40.1H0.7L12.8,0.7z',
                     length: '20%',
-                    width: 15,
+                    width: windowWidth <= 768 ? 10 : 15,
                     offsetCenter: [0, '-60%'],
                     itemStyle: {
                         color: 'auto',
                     },
                 },
                 axisTick: {
-                    length: 15,
+                    length: windowWidth <= 768 ? 5 : 15,
                     lineStyle: {
                         color: 'auto',
-                        width: 2,
+                        width: windowWidth <= 768 ? 1 : 2,
                     },
                 },
                 splitLine: {
-                    length: 25,
+                    length: windowWidth <= 768 ? 10 : 25,
                     lineStyle: {
                         color: 'auto',
-                        width: 4,
+                        width: windowWidth <= 768 ? 2 : 4,
                     },
                 },
                 axisLabel: {
                     color: 'inherit',
-                    fontSize: 15,
+                    fontSize: windowWidth <= 768 ? 10 : 15,
                     fontWeight: 'normal',
-                    distance: -60,
+                    distance: windowWidth <= 768 ? -40 : -60,
                     rotate: 'tangential',
                     formatter: function (value: number) {
                         if (value === 52) {
@@ -72,20 +73,20 @@ export default function MyEchartGrade(props: { data: any }) {
                         } else if (value === 28) {
                             return 'Overweight';
                         } else if (value === 22) {
-                            return 'Normal';
+                            return ' Normal ';
                         } else if (value === 16) {
-                            return 'Underweight';
+                            return 'Underweight ';
                         }
                         return '';
                     },
                 },
                 title: {
-                    offsetCenter: [0, '-10%'],
-                    fontSize: 20,
+                    offsetCenter: [0, windowWidth <= 768 ? '0%' : '-10%'],
+                    fontSize: windowWidth <= 768 ? 10 : 20,
                 },
                 detail: {
-                    fontSize: 30,
-                    offsetCenter: [0, '-30%'],
+                    fontSize: windowWidth <= 768 ? 15 : 30,
+                    offsetCenter: [0, windowWidth <= 768 ? '-25%' : '-30%'],
                     valueAnimation: true,
                     formatter: function (value: number) {
                         if (value >= 30) {
