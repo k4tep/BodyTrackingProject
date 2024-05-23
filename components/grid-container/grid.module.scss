@@ -48,20 +48,20 @@ $main-light-color: #EEEEEE;
   border-bottom: none;
 }
 
-@media only screen and (max-width: 1024px) {
-  .grid_container_overflow {
-    height: 25vh;
-  }
-}
+// @media only screen and (max-width: 1024px) {
+//   .grid_container_overflow {
+//     height: 25vh;
+//   }
+// }
 
-@media only screen and (max-width: 768px) { 
-  .grid_container_overflow {
-    height: 30vh;
-  }
-}
+// @media only screen and (max-width: 768px) { 
+//   .grid_container_overflow {
+//     height: 30vh;
+//   }
+// }
 
-@media only screen and (max-width: 380px) { 
-  .grid_container_overflow {
-    height: 40vh;
-  }
-}
+// @media only screen and (max-width: 380px) { 
+//   .grid_container_overflow {
+//     height: 40vh;
+//   }
+// }
