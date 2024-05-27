@@ -48,7 +48,7 @@ export default function Profile() {
 
     return (
         <main className={styles.main}>
-            <MyHeader />
+            <MyHeader type={'profile'} />
             <div className={styles.container}>
                 <div className={styles.side_container}>
                     <div className={styles.side_btn}>
