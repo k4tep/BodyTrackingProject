@@ -27,6 +27,15 @@ $main-light-color: #EEEEEE;
   height: 30px;
 }
 
+.grid_item::selection {
+  background-color: $main-green-color;
+  color: $main-light-color;
+}
+
+.grid_item:focus {
+  outline-color: $main-green-color;
+}
+
 .grid_item:hover {
   background-color: $dark-light-color;
 }

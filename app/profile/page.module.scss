@@ -51,6 +51,8 @@ $main-light-color: #EEEEEE;
 
 .info_container {
   margin: 2vh 0;
+  display: flex;
+  flex-direction: column;
   :first-child {
     border-top-style: none;
   }
@@ -64,8 +66,36 @@ $main-light-color: #EEEEEE;
   padding: 1vh 0;
   border: 1px $dark-green-color;
   border-top-style: solid;
+}
 
-  h3:last-child {
-    font-family: monospace;
-  }
+.info_input {
+  color: $dark-green-color;
+  border: none;
+  width: fit-content;
+  text-align: right;
+  outline-color: $main-green-color;
+  padding: 1vh 0;
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.info_input::selection {
+  background-color: $main-green-color;
+  color: $main-light-color;
+}
+
+.info_input:focus {
+  outline-color: $main-green-color;
+}
+
+.save_btn {
+  background-color: $dark-green-color;
+  color: $main-light-color;
+  border: none;
+  border-radius: 3px;
+  font-size: large;
+  padding: 5px 30px;
+  cursor: pointer;
+  align-self: flex-end;
 }

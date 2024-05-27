@@ -7,6 +7,7 @@ import MyHeader from '@/components/header/header';
 import router from 'next/router';
 import { useEffect, useState } from 'react';
 import { getMe } from '@/api/me/get-me';
+import { putMe } from '@/api/me/put-me';
 
 export default function Profile() {
     library.add(fas);
@@ -19,6 +20,14 @@ export default function Profile() {
         age: 0,
         height: 0,
     });
+
+    async function putNewData() {
+        try {
+            await putMe(data);
+        } catch (error) {
+            alert(`${error}`);
+        }
+    }
 
     useEffect(() => {
         if (!localStorage.getItem('token')) {
@@ -64,16 +73,45 @@ export default function Profile() {
                         <div className={styles.info_container}>
                             <div className={styles.info}>
                                 <h3>Email</h3>
-                                <h3>{data.email}</h3>
+                                <input
+                                    className={styles.info_input}
+                                    defaultValue={data.email}
+                                ></input>
                             </div>
                             <div className={styles.info}>
                                 <h3>Height</h3>
-                                <h3>{data.height}</h3>
+                                <input
+                                    className={styles.info_input}
+                                    defaultValue={data.height}
+                                    onBlur={(event) => {
+                                        setData({
+                                            ...data,
+                                            height: Number(event.target.value),
+                                        });
+                                    }}
+                                ></input>
                             </div>
                             <div className={styles.info}>
                                 <h3>Age</h3>
-                                <h3>{data.age}</h3>
+                                <input
+                                    className={styles.info_input}
+                                    defaultValue={data.age}
+                                    onBlur={(event) => {
+                                        setData({
+                                            ...data,
+                                            height: Number(event.target.value),
+                                        });
+                                    }}
+                                ></input>
                             </div>
+                            <button
+                                className={styles.save_btn}
+                                onClick={() => {
+                                    putNewData();
+                                }}
+                            >
+                                Save
+                            </button>
                         </div>
                     </div>
                 )}

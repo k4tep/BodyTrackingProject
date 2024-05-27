@@ -1,4 +1,4 @@
-import { getMe } from '@/api/get-me';
+import { getMe } from '@/api/me/get-me';
 import ReactEcharts from 'echarts-for-react';
 import { useEffect, useState } from 'react';
 
