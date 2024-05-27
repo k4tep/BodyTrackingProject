@@ -21,6 +21,31 @@ $main-light-color: #EEEEEE;
   color: $dark-green-color;
 }
 
+.hide_div {
+  display: none;
+}
+
+.show_div {
+  display: block;
+  background-color: $main-light-color;
+  position: absolute;
+  right: 10vw;
+  border-radius: 5px;
+  top: 6vh;
+  padding: 1vw;
+  z-index: 30;
+  box-shadow: 0px 5px 2px 1px $dark-light-color;
+  
+  a {
+    display: flex;
+    margin-top: 2vh;
+
+    h3 {
+      margin-left: 1vw;
+    }
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .header{
     width: 85%;
