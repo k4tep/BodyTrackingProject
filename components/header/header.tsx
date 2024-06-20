@@ -11,7 +11,9 @@ export default function MyHeader(props: { type: string }) {
 
     return (
         <header className={styles.header}>
-            <h1 className={styles.header_name_text}>Body Tracking</h1>
+            <Link href="/your-body">
+                <h1 className={styles.header_name_text}>Body Tracking</h1>
+            </Link>
             <FontAwesomeIcon
                 icon={['fas', 'user-gear']}
                 size="2xl"

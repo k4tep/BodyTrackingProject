@@ -11,6 +11,10 @@ html, body {
   height: 100%;
 }
 
+body:has(.popup_popup_container__YVmID) {
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 1024px) {
   html, body {
     height: 120%;

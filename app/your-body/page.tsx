@@ -36,15 +36,12 @@ export default function Main() {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        const body = document.querySelector('body');
-        if (!localStorage.getItem('token')) {
+        if (!localStorage.getItem('token') || error === '401 Token expired') {
             router.push('/auth');
         }
-        if (popUp && body) {
-            body.style.overflow = 'hidden';
-        } else if (!popUp && body) {
-            body.style.overflow = 'scroll';
-        }
+    }, []);
+
+    useEffect(() => {
         async function getList() {
             setDeleteID(null);
             setLoading(true);
