@@ -30,9 +30,12 @@ export default function Profile() {
     }
 
     useEffect(() => {
-        if (!localStorage.getItem('token')) {
+        if (!localStorage.getItem('token') || error === '401 Token expired') {
             router.push('/auth');
         }
+    }, []);
+
+    useEffect(() => {
         async function getList() {
             setLoading(true);
             try {
@@ -82,7 +85,7 @@ export default function Profile() {
                                 <h3>Height</h3>
                                 <input
                                     className={styles.info_input}
-                                    defaultValue={data.height}
+                                    defaultValue={'unknown' && data.height}
                                     onBlur={(event) => {
                                         setData({
                                             ...data,
@@ -95,11 +98,11 @@ export default function Profile() {
                                 <h3>Age</h3>
                                 <input
                                     className={styles.info_input}
-                                    defaultValue={data.age}
+                                    defaultValue={'unknown' && data.age}
                                     onBlur={(event) => {
                                         setData({
                                             ...data,
-                                            height: Number(event.target.value),
+                                            age: Number(event.target.value),
                                         });
                                     }}
                                 ></input>
