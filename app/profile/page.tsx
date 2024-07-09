@@ -14,6 +14,7 @@ export default function Profile() {
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [newDataAnswer, setNewDataAnswer] = useState('');
     const [data, setData] = useState({
         id: 0,
         email: '',
@@ -24,9 +25,14 @@ export default function Profile() {
     async function putNewData() {
         try {
             await putMe(data);
+            setNewDataAnswer('Saved successfully');
         } catch (error) {
             alert(`${error}`);
+            setNewDataAnswer('Save error');
         }
+        setTimeout(() => {
+            setNewDataAnswer('');
+        }, 2000);
     }
 
     useEffect(() => {
@@ -107,14 +113,17 @@ export default function Profile() {
                                     }}
                                 ></input>
                             </div>
-                            <button
-                                className={styles.save_btn}
-                                onClick={() => {
-                                    putNewData();
-                                }}
-                            >
-                                Save
-                            </button>
+                            <div className={styles.info}>
+                                <h3>{newDataAnswer}</h3>
+                                <button
+                                    className={styles.save_btn}
+                                    onClick={() => {
+                                        putNewData();
+                                    }}
+                                >
+                                    Save
+                                </button>
+                            </div>
                         </div>
                     </div>
                 )}

@@ -36,7 +36,7 @@ export default function Main() {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        if (!localStorage.getItem('token') || error === '401 Token expired') {
+        if (!localStorage.getItem('token') || error === '401 Unauthorized') {
             router.push('/auth');
         }
     }, []);
