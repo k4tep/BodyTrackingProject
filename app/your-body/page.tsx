@@ -30,6 +30,7 @@ export default function Main() {
         startDate: dayjs(Date.now() - 30 * 24 * 60 * 60 * 1000),
         endDate: dayjs(Date.now()),
     });
+    const [preset, setPreset] = useState('month');
     const [deleteID, setDeleteID] = useState(null);
     const [popUp, setPopUp] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -75,6 +76,77 @@ export default function Main() {
                             <div className={styles.date_container}>
                                 <MyDatePicker label="Start date" date={date} setDate={setDate} />
                                 <MyDatePicker label="End date" date={date} setDate={setDate} />
+                                <p>Presets</p>
+                                <div className={styles.periods_btn_container}>
+                                    <button
+                                        className={
+                                            preset === 'week'
+                                                ? `${styles.check} ${styles.periods_btn}`
+                                                : styles.periods_btn
+                                        }
+                                        onClick={() => {
+                                            setDate({
+                                                ...date,
+                                                startDate: dayjs(
+                                                    Date.now() - 7 * 24 * 60 * 60 * 1000
+                                                ),
+                                            });
+                                            setPreset('week');
+                                        }}
+                                    >
+                                        Week
+                                    </button>
+                                    <button
+                                        className={
+                                            preset === 'month'
+                                                ? `${styles.check} ${styles.periods_btn}`
+                                                : styles.periods_btn
+                                        }
+                                        onClick={() => {
+                                            setDate({
+                                                ...date,
+                                                startDate: dayjs(
+                                                    Date.now() - 30 * 24 * 60 * 60 * 1000
+                                                ),
+                                            });
+                                            setPreset('month');
+                                        }}
+                                    >
+                                        Month
+                                    </button>
+                                    <button
+                                        className={
+                                            preset === '3month'
+                                                ? `${styles.check} ${styles.periods_btn}`
+                                                : styles.periods_btn
+                                        }
+                                        onClick={() => {
+                                            setDate({
+                                                ...date,
+                                                startDate: dayjs().subtract(3, 'month'),
+                                            });
+                                            setPreset('3month');
+                                        }}
+                                    >
+                                        3 month
+                                    </button>
+                                    <button
+                                        className={
+                                            preset === '6month'
+                                                ? `${styles.check} ${styles.periods_btn}`
+                                                : styles.periods_btn
+                                        }
+                                        onClick={() => {
+                                            setDate({
+                                                ...date,
+                                                startDate: dayjs().subtract(6, 'month'),
+                                            });
+                                            setPreset('6month');
+                                        }}
+                                    >
+                                        6 month
+                                    </button>
+                                </div>
                                 <MyGrid
                                     data={data}
                                     setData={setData}

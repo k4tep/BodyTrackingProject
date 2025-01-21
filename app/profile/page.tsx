@@ -91,7 +91,7 @@ export default function Profile() {
                                 <h3>Height</h3>
                                 <input
                                     className={styles.info_input}
-                                    defaultValue={'unknown' && data.height}
+                                    defaultValue={data.height && 'unknown'}
                                     onBlur={(event) => {
                                         setData({
                                             ...data,
@@ -104,7 +104,7 @@ export default function Profile() {
                                 <h3>Age</h3>
                                 <input
                                     className={styles.info_input}
-                                    defaultValue={'unknown' && data.age}
+                                    defaultValue={data.age && 'unknown'}
                                     onBlur={(event) => {
                                         setData({
                                             ...data,

@@ -20,6 +20,19 @@ export default function MyEchartLine(props: {
     }, [props.date]);
 
     let option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: '{b} <br/>------- <br/>Вес: {c}',
+            padding: [5],
+            textStyle: {
+                fontSize: 12,
+                color: '#627254',
+            },
+            backgroundColor: 'rgba(238, 238, 238, 0.8)',
+            border: 'none',
+            borderRadius: 4,
+            extraCssText: 'height: fit-content;',
+        },
         xAxis: {
             type: 'category',
             data: props.data
