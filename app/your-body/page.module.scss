@@ -75,24 +75,19 @@ $main-light-color: #eeeeee;
 }
 
 @media screen and (max-width: 1024px) {
-    .main {
-        height: 100%;
-    }
-
     .main_container {
         width: 93%;
-        height: 100%;
+        height: auto;
         align-items: flex-start;
     }
 
     .data_container {
         flex-direction: column;
-        height: 100%;
         align-items: center;
         .data_container {
             align-items: center;
             :last-child {
-                height: 45%;
+                height: 20vh;
             }
         }
     }
@@ -104,19 +99,5 @@ $main-light-color: #eeeeee;
 
     .echart_name {
         margin: 1vh 0 0 4vw;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .grid_container_overflow {
-        height: 30vh;
-    }
-
-    .data_container {
-        .data_container {
-            :last-child {
-                height: 40%;
-            }
-        }
     }
 }

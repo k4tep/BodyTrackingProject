@@ -1,47 +1,50 @@
 $dark-green-color: #627254;
-$main-green-color: #76885B;
-$dark-light-color: #DDDDDD;
-$main-light-color: #EEEEEE;
+$main-green-color: #76885b;
+$dark-light-color: #dddddd;
+$main-light-color: #eeeeee;
 
 * {
-  margin: 0;
+    margin: 0;
 }
 
-html, body {
-  height: 100%;
+html,
+body {
+    overflow: hidden;
 }
 
 body:has(.popup_popup_container__YVmID) {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 1024px) {
-  html, body {
-    height: 120%;
-  }
+    html,
+    body {
+        overflow: visible;
+    }
 }
 
-@media only screen and (max-width: 768px) {
-  html, body {
-    height: 125%;
-  }
-}
+// @media only screen and (max-width: 768px) {
+//   html, body {
+//     height: 125%;
+//   }
+// }
 
-@media only screen and (max-width: 380px) {
-  html, body {
-    height: 133%;
-  }
-}
+// @media only screen and (max-width: 380px) {
+//   html, body {
+//     height: 133%;
+//   }
+// }
 
 a {
-  text-decoration: none;
-  color: $dark-green-color;
+    text-decoration: none;
+    color: $dark-green-color;
 }
 
 .MuiPickersDay-root:not(.Mui-selected) {
-  border-color: $main-green-color;
+    border-color: $main-green-color;
 }
 
-.MuiPickersDay-root.Mui-selected, .MuiPickersYear-yearButton.Mui-selected {
-  background-color: $main-green-color !important;
+.MuiPickersDay-root.Mui-selected,
+.MuiPickersYear-yearButton.Mui-selected {
+    background-color: $main-green-color !important;
 }
